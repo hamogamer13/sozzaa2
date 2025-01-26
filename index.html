@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sozzaa - الصفحة الرئيسية</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Lobster&display=swap');
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #1c1c1c;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 50px 20px;
+            background-color: #004080;
+            color: #ffffff;
+            border-bottom: 5px solid #ffcc00;
+        }
+        h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .subtitle {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .arabic-title {
+            font-size: 3rem;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px auto;
+            max-width: 800px;
+            color: #e0e0e0;
+        }
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .login-button a {
+            text-decoration: none;
+            color: white;
+            background-color: #00509e;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .login-button a:hover {
+            background-color: #003f7f;
+        }
+        .main-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #ffffff;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+            text-align: center;
+        }
+        .price-section {
+            display: none;
+            margin: 20px auto;
+        }
+        .price-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .price-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+        .price-box {
+            background: #333;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .price-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .price-box .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .contact-box {
+            background: #444;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .show-prices-btn {
+            background-color: #00509e;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .show-prices-btn:hover {
+            background-color: #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="login-button">
+            <a href="login.html">تسجيل الدخول</a>
+        </div>
+        <h1>Sozzaa</h1>
+        <h2 class="arabic-title">سوزا</h2>
+        <h2 class="subtitle">بوابة عالم الغد للعلوم والتكنولوجيا</h2>
+    </header>
+
+    <!-- Banner Image -->
+    <img src="istockphoto-1206796363-612x612 (1).jpg" alt="Technology Banner" class="main-image">
+
+    <main>
+        <p>
+            مرحبًا بكم في "سوزا"، المنصة الرائدة التي تجمع بين أحدث المقالات والأخبار المتعلقة بالتكنولوجيا، الذكاء الاصطناعي، وأنظمة المعلومات.
+            نقدم لكم تحليلات تقنية عميقة وأحدث الأخبار التي تغطي التطورات الحديثة في العالم الرقمي.
+        </p>
+        <p>
+            اكتشفوا محتوى متنوعًا يضم موضوعات حول البيانات الضخمة، الأمن السيبراني، الذكاء الاصطناعي، وإنترنت الأشياء. هدفنا هو تمكينكم من مواكبة أحدث الابتكارات التكنولوجية.
+        </p>
+        <p>
+            انضموا إلينا في "سوزا" لاستكشاف مقالات ملهمة وشاملة تغطي كافة الجوانب التقنية بأسلوب بسيط ومبسط يناسب جميع الفئات.
+        </p>
+        <button class="show-prices-btn" onclick="togglePrices()">عرض الأسعار</button>
+
+        <div class="price-section" id="price-section">
+            <h2 class="price-title">أسعار الاشتراكات</h2>
+            <div class="price-container">
+                <div class="price-box">
+                    <h3>داخل مصر</h3>
+                    <div class="price">2000 EGP</div>
+                </div>
+                <div class="price-box">
+                    <h3>خارج مصر</h3>
+                    <div class="price">300 USD</div>
+                </div>
+            </div>
+            <div class="contact-box">للاشتراك اتصل على:01155551813</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>حقوق النشر محفوظة لموسسة سوزا برعاية عالم الغد وعلوم التكنولوجي</p>
+    </footer>
+
+    <script>
+        function togglePrices() {
+            const priceSection = document.getElementById('price-section');
+            if (priceSection.style.display === 'none' || priceSection.style.display === '') {
+                priceSection.style.display = 'block';
+            } else {
+                priceSection.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+
+

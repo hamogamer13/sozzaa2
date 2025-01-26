@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sozzaa - بوابة عالم الغد للعلوم و التكنولوجيا</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Lobster&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            padding: 50px 20px;
+            background-color: #004080;
+            color: white;
+        }
+        h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+        }
+        h1 a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        h1 a:hover {
+            color: #ffcc00;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .website-name {
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+        .website-name a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .website-name a:hover {
+            color: #ffcc00;
+        }
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #00509e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #003f7f;
+        }
+        .login-page {
+            display: none;
+            margin-top: 50px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background: #222;
+            color: #fff;
+        }
+        .form-container button {
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            font-size: 1rem;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #003060;
+        }
+        .error-page {
+            display: none;
+            padding: 50px;
+        }
+        .error-page h1 {
+            color: red;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="homepage.html">Sozzaa</a></h1>
+        <div class="website-name">
+            <h2 class="website-name"><a href="homepage.html">سوزا</a></h2>
+        </div>
+        <h2 class="subtitle">بوابة عالم الغد للعلوم و التكنولوجيا</h2>
+        <button onclick="showLoginPage()">الاشتراكات</button>
+    </header>
+
+    <div class="login-page" id="loginPage">
+        <div class="form-container">
+            <h2>تسجيل الدخول</h2>
+            <form onsubmit="showErrorPage(event)">
+                <input type="text" name="username" placeholder="اسم المستخدم" required>
+                <input type="password" name="password" placeholder="كلمة المرور" required>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="error-page" id="errorPage">
+        <h1>خطأ: حدثت مشكلة أثناء تسجيل الدخول</h1>
+        <p>الرجاء المحاولة مرة أخرى لاحقًا.</p>
+        <button onclick="goBackToHomePage()">عودة إلى الصفحة الرئيسية</button>
+    </div>
+
+    <script>
+        function showLoginPage() {
+            document.getElementById('loginPage').style.display = 'block';
+            document.getElementById('errorPage').style.display = 'none';
+            window.scrollTo(0, document.getElementById('loginPage').offsetTop);
+        }
+
+        function showErrorPage(event) {
+            event.preventDefault();
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('errorPage').style.display = 'block';
+            window.scrollTo(0, document.getElementById('errorPage').offsetTop);
+        }
+
+        function goBackToHomePage() {
+            document.getElementById('errorPage').style.display = 'none';
+            document.getElementById('loginPage').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
